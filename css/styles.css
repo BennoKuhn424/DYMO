@@ -636,6 +636,275 @@ a:hover {
   margin-bottom: 0.4rem;
 }
 
+/* Cab design gallery — portrait product renders on white */
+.design-grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  align-items: stretch;
+}
+
+/* let the gallery run wider than the standard text container */
+.design-wide {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 800px) {
+  .design-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.design-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.design-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.design-card__media {
+  height: 240px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+@media (min-width: 800px) {
+  .design-card__media {
+    height: 260px;
+  }
+}
+
+.design-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.design-card__body {
+  padding: 1rem 0.9rem 1.2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  flex: 1;
+}
+
+.design-card__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin: 0 0 0.35rem;
+  text-wrap: balance;
+}
+
+.design-card__meta {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--grey-600);
+}
+
+.design-card__tag {
+  display: inline-block;
+  margin: 0 0 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--grey-100);
+  color: var(--grey-600);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.design-card__tag--standard {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}
+
+.design-card__inline-tag {
+  display: inline-block;
+  vertical-align: 2px;
+  margin-left: 0.4rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--grey-100);
+  color: var(--grey-600);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.design-card__inline-tag--standard {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}
+
+.design-card__spec {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.design-card__spec dt {
+  font-weight: 700;
+  color: var(--grey-900);
+  margin-top: 0.55rem;
+}
+
+.design-card__spec dt:first-child {
+  margin-top: 0;
+}
+
+.design-card__spec dd {
+  margin: 0.1rem 0 0;
+  color: var(--grey-600);
+}
+
+/* Subsection heading inside a gallery band */
+.subsection-head {
+  margin: 3.5rem 0 1.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.subsection-head h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--black);
+  margin: 0 0 0.5rem;
+}
+
+.subsection-head p {
+  margin: 0;
+  max-width: 720px;
+  color: var(--grey-600);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* Control panel cards — tall, narrow fixture images */
+.cop-grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 700px) {
+  .cop-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cop-card {
+  margin: 0;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.cop-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.cop-card__media {
+  height: 420px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.75rem;
+}
+
+.cop-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cop-card__body {
+  padding: 1rem 1.1rem 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  flex: 1;
+}
+
+/* Series strip — one wide catalogue image with its own model labels */
+.handrail-figure,
+.series-figure {
+  margin: 0;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem 1.25rem 0.5rem;
+}
+
+.handrail-figure img,
+.series-figure img {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* the floor swatch grid carries more detail, so let it run wider */
+.series-figure--wide img {
+  max-width: 900px;
+}
+
+.handrail-figure figcaption,
+.series-figure figcaption {
+  margin-top: 0.5rem;
+  padding-bottom: 0.75rem;
+  text-align: center;
+  font-size: 0.86rem;
+  color: var(--grey-600);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cop-card {
+    transition: none;
+  }
+  .cop-card:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .design-card {
+    transition: none;
+  }
+  .design-card:hover {
+    transform: none;
+  }
+}
+
 /* Feature strip */
 .features {
   display: grid;
@@ -696,7 +965,7 @@ a:hover {
   border-bottom: none;
 }
 
-/* Clients table */
+/* Lift inspectors table */
 .table-wrap {
   overflow-x: auto;
   border-radius: var(--radius);
@@ -704,45 +973,45 @@ a:hover {
   box-shadow: var(--shadow-sm);
 }
 
-.clients-table {
+.inspectors-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.95rem;
 }
 
-.clients-table th,
-.clients-table td {
+.inspectors-table th,
+.inspectors-table td {
   padding: 1rem 1.1rem;
   text-align: left;
   vertical-align: top;
 }
 
-.clients-table thead {
+.inspectors-table thead {
   background: var(--black);
   color: var(--white);
 }
 
-.clients-table th {
+.inspectors-table th {
   font-weight: 700;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.clients-table tbody tr:nth-child(odd) {
+.inspectors-table tbody tr:nth-child(odd) {
   background: var(--white);
 }
 
-.clients-table tbody tr:nth-child(even) {
+.inspectors-table tbody tr:nth-child(even) {
   background: #fdf2f3;
 }
 
-.clients-table .org {
+.inspectors-table .org {
   font-weight: 700;
   color: var(--red);
 }
 
-.clients-table a {
+.inspectors-table a {
   word-break: break-word;
 }
 
