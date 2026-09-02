@@ -1015,6 +1015,33 @@ a:hover {
   word-break: break-word;
 }
 
+/* keep phone numbers on one line and fit the table to narrow screens */
+.inspectors-table td a[href^="tel:"] {
+  white-space: nowrap;
+  word-break: normal;
+}
+
+@media (max-width: 600px) {
+  .inspectors-table {
+    font-size: 0.84rem;
+  }
+
+  .inspectors-table th,
+  .inspectors-table td {
+    padding: 0.7rem 0.4rem;
+  }
+
+  .inspectors-table th:first-child,
+  .inspectors-table td:first-child {
+    padding-left: 0.6rem;
+  }
+
+  .inspectors-table th:last-child,
+  .inspectors-table td:last-child {
+    padding-right: 0.6rem;
+  }
+}
+
 /* Contact form */
 .form-grid {
   display: grid;
